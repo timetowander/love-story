@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>김기윤 ♥ 오준원 결혼합니다</title>
+    <meta name="description" content="김기윤과 오준원의 결혼식에 초대합니다. 2026년 5월 24일 일요일 오후 12시 10분">
+    <meta property="og:title" content="김기윤 ♥ 오준원 결혼합니다">
+    <meta property="og:description" content="2026년 5월 24일 일요일 오후 12시 10분 | 서울웨딩타워">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <canvas id="petals"></canvas>
+
+    <!-- 메인: 영화 포스터 -->
+    <section id="main-visual" class="section">
+        <div class="main-photo">
+            <img src="images/main.jpg" alt="김기윤과 오준원의 사진" onerror="this.parentElement.classList.add('no-photo')">
+        </div>
+        <div class="main-overlay">
+            <div class="rating-badge fade-in">전체관람가</div>
+            <p class="poster-label fade-in">NOW SHOWING</p>
+            <h1 class="poster-title fade-in">
+                <span>Giyoon</span>
+                <span class="poster-amp">&amp;</span>
+                <span>Junwon</span>
+            </h1>
+            <p class="poster-tagline fade-in">"우리 결혼합니다"</p>
+            <p class="poster-date fade-in">2026년 5월 24일 일요일 | 서울웨딩타워</p>
+            <div class="scroll-indicator fade-in" id="scrollIndicator">
+                <span class="scroll-arrow"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 시놉시스: 인사말 -->
+    <section id="greeting" class="section">
+        <div class="section-inner">
+            <h2 class="section-label animate-on-scroll">SYNOPSIS</h2>
+            <h3 class="section-title animate-on-scroll">결혼합니다</h3>
+            <p class="synopsis-text animate-on-scroll">두 사람의 이야기가
+하나의 영화가 되려 합니다.
+
+가장 아름다운 장면에
+함께해 주신다면
+더없이 감사하겠습니다.
+</p>
+            <div class="cast-info animate-on-scroll">
+                <p class="cast-line">
+                    <span class="cast-parents">김용환</span>
+                    <span class="cast-relation">의 차남</span>
+                    <span class="cast-name">김기윤</span>
+                </p>
+                <p class="cast-line">
+                    <span class="cast-parents">오용태 · 나미자</span>
+                    <span class="cast-relation">의 차녀</span>
+                    <span class="cast-name">오준원</span>
+                </p>
+            </div>
+            <div class="contact-buttons animate-on-scroll">
+                <a href="tel:010-7257-8577" class="contact-btn">
+                    <span class="btn-icon">📞</span> 신랑에게 연락
+                </a>
+                <a href="tel:010-2070-8934" class="contact-btn">
+                    <span class="btn-icon">📞</span> 신부에게 연락
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 입장권: 예식 정보 -->
+    <section id="ticket" class="section">
+        <div class="section-inner">
+            <h2 class="section-label animate-on-scroll">TICKET</h2>
+            <div class="ticket-card animate-on-scroll">
+                <div class="ticket-top">
+                    <p class="ticket-venue">서울웨딩타워</p>
+                    <p class="ticket-hall"></p>
+                </div>
+                <div class="ticket-divider">
+                    <div class="ticket-notch ticket-notch-left"></div>
+                    <div class="ticket-dash"></div>
+                    <div class="ticket-notch ticket-notch-right"></div>
+                </div>
+                <div class="ticket-bottom">
+                    <div class="ticket-row">
+                        <div class="ticket-field">
+                            <span class="ticket-label">DATE</span>
+                            <span class="ticket-value">2026년 5월 24일 일요일</span>
+                        </div>
+                    </div>
+                    <div class="ticket-row">
+                        <div class="ticket-field">
+                            <span class="ticket-label">TIME</span>
+                            <span class="ticket-value">오후 12시 10분</span>
+                        </div>
+                        <div class="ticket-field">
+                            <span class="ticket-label">GENRE</span>
+                            <span class="ticket-value">ROMANCE</span>
+                        </div>
+                    </div>
+                    <div class="ticket-row">
+                        <div class="ticket-field">
+                            <span class="ticket-label">WITH</span>
+                            <span class="ticket-value ticket-admit">LOVE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 카운트다운 -->
+    <section id="calendar" class="section">
+        <div class="section-inner">
+            <h2 class="section-label animate-on-scroll">COMING SOON</h2>
+            <div class="calendar-grid animate-on-scroll" id="calendarGrid"></div>
+            <div class="countdown animate-on-scroll" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-days">00</span>
+                    <span class="countdown-label">DAYS</span>
+                </div>
+                <span class="countdown-separator">:</span>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-hours">00</span>
+                    <span class="countdown-label">HOURS</span>
+                </div>
+                <span class="countdown-separator">:</span>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-minutes">00</span>
+                    <span class="countdown-label">MIN</span>
+                </div>
+                <span class="countdown-separator">:</span>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-seconds">00</span>
+                    <span class="countdown-label">SEC</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 트레일러: 갤러리 슬라이드쇼 -->
+    <section id="gallery" class="section">
+        <div class="section-inner">
+            <h2 class="section-label animate-on-scroll">TRAILER</h2>
+            <div class="slideshow animate-on-scroll">
+                
+                <div class="slide active">
+                    <img src="images/gallery1.jpg" alt="스틸컷 1" loading="lazy">
+                    
+                    <div class="slide-caption">수학 여행</div>
+                    
+                </div>
+                
+                <div class="slide">
+                    <img src="images/gallery2.jpg" alt="스틸컷 2" loading="lazy">
+                    
+                    <div class="slide-caption">커플 사진</div>
+                    
+                </div>
+                
+                <div class="slide">
+                    <img src="images/gallery3.jpg" alt="스틸컷 3" loading="lazy">
+                    
+                    <div class="slide-caption">연극</div>
+                    
+                </div>
+                
+                <div class="slide">
+                    <img src="images/gallery4.jpg" alt="스틸컷 4" loading="lazy">
+                    
+                    <div class="slide-caption">일상</div>
+                    
+                </div>
+                
+                <div class="slide">
+                    <img src="images/gallery5.jpg" alt="스틸컷 5" loading="lazy">
+                    
+                    <div class="slide-caption">신년 맞이</div>
+                    
+                </div>
+                
+                <div class="slide">
+                    <img src="images/gallery6.jpg" alt="스틸컷 6" loading="lazy">
+                    
+                    <div class="slide-caption">학창시절</div>
+                    
+                </div>
+                
+                <button class="slide-prev" aria-label="이전">&#10094;</button>
+                <button class="slide-next" aria-label="다음">&#10095;</button>
+                <div class="slide-dots">
+                    
+                    <span class="dot active" data-index="0"></span>
+                    
+                    <span class="dot" data-index="1"></span>
+                    
+                    <span class="dot" data-index="2"></span>
+                    
+                    <span class="dot" data-index="3"></span>
+                    
+                    <span class="dot" data-index="4"></span>
+                    
+                    <span class="dot" data-index="5"></span>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 상영관: 오시는 길 -->
+    <section id="location" class="section">
+        <div class="section-inner">
+            <h2 class="section-label animate-on-scroll">THEATER</h2>
+            <div class="venue-info animate-on-scroll">
+                <h3 class="venue-name">서울웨딩타워</h3>
+                <p class="venue-hall"></p>
+                <p class="venue-address">서울 송파구 양재대로 932 2층</p>
+                <p class="venue-phone">
+                    <a href="tel:02-463-5000">02-463-5000</a>
+                </p>
+            </div>
+            <div class="map-buttons animate-on-scroll">
+                <a href="https://place.map.kakao.com/1252201089" target="_blank" rel="noopener" class="map-btn kakao-map-btn">
+                    카카오맵
+                </a>
+                <a href="https://naver.me/x9BNpLO4" target="_blank" rel="noopener" class="map-btn naver-map-btn">
+                    네이버지도
+                </a>
+            </div>
+            <div class="directions animate-on-scroll">
+                
+                <div class="direction-item">
+                    <span class="direction-type">지하철</span>
+                    <span class="direction-detail">가락시장역 2번 출구에서 도보 5분</span>
+                </div>
+                
+                <div class="direction-item">
+                    <span class="direction-type">버스</span>
+                    <span class="direction-detail">가락시장.가락시장역 정류장 하차 (100, 343, 3413)</span>
+                </div>
+                
+                <div class="direction-item">
+                    <span class="direction-type">주차</span>
+                    <span class="direction-detail">건물 내 지하주차장 이용 가능 (S구역 추천!)</span>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- 매점: 계좌번호 -->
+    <section id="accounts" class="section">
+        <div class="section-inner">
+            <h2 class="section-label animate-on-scroll">CONCESSION</h2>
+            <h3 class="section-title animate-on-scroll">마음 전하실 곳</h3>
+            <p class="account-subtitle animate-on-scroll">축하의 마음을 전해주세요</p>
+
+            <div class="account-group animate-on-scroll">
+                <button class="account-toggle" data-target="groom-accounts">
+                    <span>신랑측 계좌번호</span>
+                    <span class="toggle-arrow">▼</span>
+                </button>
+                <div id="groom-accounts" class="account-list" style="display:none;">
+                    
+                    <div class="account-item">
+                        <div class="account-info">
+                            <span class="account-bank">농협은행</span>
+                            <span class="account-number">1343-02-023642</span>
+                            <span class="account-holder">김기윤</span>
+                        </div>
+                        <button class="copy-btn" data-account="1343-02-023642">복사</button>
+                    </div>
+                    
+                    <div class="account-item">
+                        <div class="account-info">
+                            <span class="account-bank">대구은행</span>
+                            <span class="account-number">123-45-6789-012</span>
+                            <span class="account-holder">신랑 아버지</span>
+                        </div>
+                        <button class="copy-btn" data-account="123-45-6789-012">복사</button>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="account-group animate-on-scroll">
+                <button class="account-toggle" data-target="bride-accounts">
+                    <span>신부측 계좌번호</span>
+                    <span class="toggle-arrow">▼</span>
+                </button>
+                <div id="bride-accounts" class="account-list" style="display:none;">
+                    
+                    <div class="account-item">
+                        <div class="account-info">
+                            <span class="account-bank">카카오뱅크</span>
+                            <span class="account-number">3333-12-3456789</span>
+                            <span class="account-holder">오준원</span>
+                        </div>
+                        <button class="copy-btn" data-account="3333-12-3456789">복사</button>
+                    </div>
+                    
+                    <div class="account-item">
+                        <div class="account-info">
+                            <span class="account-bank">하나은행</span>
+                            <span class="account-number">123-456789-01234</span>
+                            <span class="account-holder">신부 아버지</span>
+                        </div>
+                        <button class="copy-btn" data-account="123-456789-01234">복사</button>
+                    </div>
+                    
+                    <div class="account-item">
+                        <div class="account-info">
+                            <span class="account-bank">농협</span>
+                            <span class="account-number">302-1234-5678-91</span>
+                            <span class="account-holder">신부 어머니</span>
+                        </div>
+                        <button class="copy-btn" data-account="302-1234-5678-91">복사</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 공유 -->
+    <section id="share" class="section">
+        <div class="section-inner">
+            <p class="share-message animate-on-scroll">소중한 분들을 초대합니다</p>
+            <div class="share-buttons animate-on-scroll">
+                
+                <button id="link-copy-btn" class="share-btn link-share">
+                    링크 복사
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 리본 구분선 -->
+    <div class="ribbon-divider animate-on-scroll">
+        <span class="ribbon-line"></span>
+        <span class="ribbon-icon">♥</span>
+        <span class="ribbon-line"></span>
+    </div>
+
+    <!-- 엔드 크레딧 -->
+    <footer class="footer credits-section" id="endCredits">
+        <div class="credits-final" id="creditsFinal">
+            <p class="credits-final-names">김기윤 ♥ 오준원</p>
+            <p class="credits-final-date">2026년 5월 24일 일요일</p>
+            <p class="credits-final-message">감사합니다</p>
+        </div>
+        <div class="credits-viewport">
+            <div class="credits-roll">
+                <p class="credits-label">CAST</p>
+                <p class="credits-line"><span class="credits-highlight">김기윤</span></p>
+                <p class="credits-line"><span class="credits-highlight">오준원</span></p>
+                <div class="credits-gap"></div>
+                <p class="credits-label">PRODUCED BY</p>
+                <p class="credits-line">김용환</p>
+                
+                <p class="credits-line">오용태</p>
+                <p class="credits-line">나미자</p>
+                <div class="credits-gap"></div>
+                <p class="credits-label">DATE</p>
+                <p class="credits-line">2026년 5월 24일 일요일</p>
+                <p class="credits-line">오후 12시 10분</p>
+                <div class="credits-gap"></div>
+                <p class="credits-label">LOCATION</p>
+                <p class="credits-line">서울웨딩타워</p>
+                <div class="credits-gap-large"></div>
+                <p class="credits-title">김기윤 ♥ 오준원</p>
+                <div class="credits-gap"></div>
+                <p class="credits-end">- THE END -</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 설정 데이터 (JavaScript용) -->
+    <script>
+        var WEDDING_CONFIG = {
+            date: "2026-05-24",
+            time: "12:10",
+            groomName: "김기윤",
+            brideName: "오준원",
+            venueName: "서울웨딩타워",
+            kakaoJsKey: "",
+            galleryCount: 6,
+            gallery: [
+                
+                { image: "images/gallery1.jpg", caption: "수학 여행" },
+                
+                { image: "images/gallery2.jpg", caption: "커플 사진" },
+                
+                { image: "images/gallery3.jpg", caption: "연극" },
+                
+                { image: "images/gallery4.jpg", caption: "일상" },
+                
+                { image: "images/gallery5.jpg", caption: "신년 맞이" },
+                
+                { image: "images/gallery6.jpg", caption: "학창시절" }
+                
+            ],
+            musicYoutubeId: "54skB_t06xY",
+            musicFile: ""
+        };
+    </script>
+    
+    
+    <script src="https://www.youtube.com/iframe_api"></script>
+    
+    <div id="yt-player-wrap" style="position:fixed;bottom:0;right:0;width:0;height:0;overflow:hidden;pointer-events:none;z-index:-1;"><div id="yt-player"></div></div>
+    <audio id="bg-audio" loop preload="auto" style="display:none;"></audio>
+
+    <!-- 라이트박스 -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-backdrop"></div>
+        <button class="lightbox-close" aria-label="닫기">&times;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="갤러리 사진">
+        </div>
+        <button class="lightbox-prev" aria-label="이전">&#10094;</button>
+        <button class="lightbox-next" aria-label="다음">&#10095;</button>
+        <div class="lightbox-counter"><span id="lightbox-current">1</span> / <span id="lightbox-total">1</span></div>
+    </div>
+    <button id="music-toggle" class="music-toggle" aria-label="음악 토글" style="display:none;">
+        <span class="music-icon music-icon-on">&#9835;</span>
+        <span class="music-icon music-icon-off" style="display:none;">&#9834;</span>
+    </button>
+    <script src="js/main.js"></script>
+</body>
+</html>
