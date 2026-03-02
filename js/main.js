@@ -839,12 +839,18 @@
             }, 150);
         }
 
-        // 슬라이드 이미지 클릭
+        // 슬라이드 이미지 클릭 + 이미지 보호
         var slides = document.querySelectorAll('.slide img');
         slides.forEach(function (img, i) {
             img.addEventListener('click', function (e) {
                 e.stopPropagation();
                 open(i);
+            });
+            img.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+            });
+            img.addEventListener('dragstart', function (e) {
+                e.preventDefault();
             });
         });
 
@@ -915,6 +921,18 @@
     // ============================================
     // 초기화
     // ============================================
+    function initImageProtection() {
+        var mainImg = document.querySelector('.main-photo img');
+        if (mainImg) {
+            mainImg.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+            });
+            mainImg.addEventListener('dragstart', function (e) {
+                e.preventDefault();
+            });
+        }
+    }
+
     function init() {
         initPetals();
         initAutoScroll();
@@ -927,6 +945,7 @@
         initScrollAnimation();
         initCredits();
         initMusic();
+        initImageProtection();
     }
 
     if (document.readyState === 'loading') {
