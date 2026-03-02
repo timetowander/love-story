@@ -242,6 +242,24 @@
 
         if (!slides.length) return;
 
+        // 가로 이미지 감지: 이미지 비율이 컨테이너(3:4)보다 넓으면 letterbox 처리
+        slides.forEach(function (slide) {
+            var img = slide.querySelector('img');
+            if (!img) return;
+            function checkLandscape() {
+                if (img.naturalWidth && img.naturalHeight) {
+                    if (img.naturalWidth / img.naturalHeight > 3 / 4) {
+                        img.classList.add('landscape');
+                    }
+                }
+            }
+            if (img.complete) {
+                checkLandscape();
+            } else {
+                img.addEventListener('load', checkLandscape);
+            }
+        });
+
         function goTo(index) {
             if (index < 0) index = slides.length - 1;
             if (index >= slides.length) index = 0;

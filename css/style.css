@@ -552,6 +552,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     -webkit-user-drag: none;
 }
 
+.slide img.landscape {
+    object-fit: contain;
+    background-color: #000;
+}
+
 .slide-caption {
     position: absolute;
     bottom: 0;
